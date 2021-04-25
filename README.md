@@ -1,14 +1,14 @@
 # Lidar-3D-Object-Detection-Voxelnet (tensorflow 2.3.1)
 ![Image of Voxelnet Architecture](https://github.com/saha0073/Lidar-3D-Object-Detection-VoxelNet/blob/main/images/pre.png)
 
-Implementation of [VoxelNet: End-to-End Learning for Point Cloud Based 3D Object Detection](https://arxiv.org/abs/1711.06396) in tensorflow 2.0.0. <br>
-This project is inspired by the article of [Gopalakrishna Adusumilli](https://towardsdatascience.com/lidar-point-cloud-based-3d-object-detection-implementation-with-colab-part-1-of-2-e3999ea8fdd4).
+Implementation of [VoxelNet: End-to-End Learning for Point Cloud Based 3D Object Detection](https://arxiv.org/abs/1711.06396) in tensorflow 2.3.1. <br>
+This project is inspired by the article of [Gopalakrishna Adusumilli](https://towardsdatascience.com/lidar-point-cloud-based-3d-object-detection-implementation-with-colab-part-1-of-2-e3999ea8fdd4) and the work of [David Stephane](https://github.com/steph1793).
 
-# Dependencies
-* Python 3.6
-* Tensorflow 2.0.0
-* opencv
-* numba
+# Skills Employed
+* Modeling Techniques: Lidar 3D Object Detection, VoxelNet, PointNet, Convolutional autoencoder-decoder.
+* Image Processing Techniques: Lidar data, Point cloud.
+* Tech Stack: Python (3.7) 
+* Libraries:  Tensorflow (2.3.1), opencv, numba.
 
 # Installation
 1. Clone this repository
@@ -16,18 +16,7 @@ This project is inspired by the article of [Gopalakrishna Adusumilli](https://to
 ```bash
 $ python3 setup build_ext --inplace
 ```
-3. Compile the evaluation code (Optional)
-This will compile the Kitti_eval project which I decided not to run during the training (during the dump tests). But at the end, of the training, you may run this evaluation code with the model of your choice. In the training script, it is commented. You may un-comment to run the kitti_eval during the training.
-```bash
-$ cd kitti_eval
-$ g++ -o evaluate_object_3d_offline evaluate_object_3d_offline.cpp
-```
-4. grant the execution permission to evaluation script
-```bash
-$ cd kitti_eval
-$ chmod +x launch_test.sh
-```
-# Data preparation
+# Data preparation (Please refer to [Colab Notebook](https://github.com/saha0073/Lidar-3D-Object-Detection-VoxelNet/blob/main/voxelnet_data_prep.ipynb))
 Here we used the Kitti Vision Dataset. 
 ![Image of Kitti Dataset](https://github.com/saha0073/Lidar-3D-Object-Detection-VoxelNet/blob/main/images/kitti.PNG)
 
@@ -52,7 +41,7 @@ Here we used the Kitti Vision Dataset.
        |   └── velodyne
 ```
 
-# Train
+# Train (Please refer to [Colab Notebook](https://github.com/saha0073/Lidar-3D-Object-Detection-VoxelNet/blob/main/voxelnet_training.ipynb)) 
 
 Run  `train.py`. You can find the meaning of each hyperparameter in the script file.
 ```
@@ -98,16 +87,15 @@ $ !python train.py \
 ```
 
 # Performances
-(ongoing)
+
 I've just finished the project, and start training it. But before that, I did a lot of tests to challenge the archictecture. One of them is overfitting the model on a small training set in a few steps in order to check if i built a model able to learn anything at all, results, below.(PS : I tried to be faithful as much as I could to the paper). 
 
-![perf](https://github.com/steph1793/Voxelnet/blob/master/images/Capture3.PNG)
-![perf2](https://github.com/steph1793/Voxelnet/blob/master/images/Capture4.PNG)
+![voxel_training](https://github.com/saha0073/Lidar-3D-Object-Detection-VoxelNet/blob/main/images/voxel_train.PNG)
+The predicted bounding boxes are decent. The model was trained only with 100 images for 16 epoch, the prediction quality will be improved a lot when trained with more images.
+![perf1](https://github.com/saha0073/Lidar-3D-Object-Detection-VoxelNet/blob/main/images/000003_front.jpg)
+![perf2](https://github.com/saha0073/Lidar-3D-Object-Detection-VoxelNet/blob/main/images/000013_front.jpg)
+![perf3](https://github.com/saha0073/Lidar-3D-Object-Detection-VoxelNet/blob/main/images/000100_front.jpg)
 
-# Coming next
 
-* Train of models for car detection
-* Finish multi gpu interface
-* Train models for Pedestrian and Cyclist detection
-* Try new features that I'll communicate soon
+Happy Learning!
 
