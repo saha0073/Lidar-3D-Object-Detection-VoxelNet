@@ -1,0 +1,10 @@
+__pycache__
+/build
+/crop_data
+/crop_data_all
+/model
+/Voxelnet_gk
+Lidar\ 3D.gdoc
+lidar_ppt_seagate.pptx
+__pycache__*
+others.ipynb
