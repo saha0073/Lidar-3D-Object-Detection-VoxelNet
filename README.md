@@ -1,8 +1,8 @@
-# Voxelnet (tensorflow 2.0.0)
-![Image of Voxelnet Architecture](https://github.com/steph1793/Voxelnet/blob/master/images/pre.png)
+# Lidar-3D-Object-Detection-Voxelnet (tensorflow 2.3.1)
+![Image of Voxelnet Architecture](https://github.com/saha0073/Lidar-3D-Object-Detection-VoxelNet/blob/main/images/pre.png)
 
 Implementation of [VoxelNet: End-to-End Learning for Point Cloud Based 3D Object Detection](https://arxiv.org/abs/1711.06396) in tensorflow 2.0.0. <br>
-This project is based on the work of [Qiangui Huang](https://github.com/qianguih), ([project](https://github.com/qianguih/voxelnet)) and [Xiaojian Ma](https://github.com/jeasinema). Thanks to them for their tremendous job that allowed me to rebuild this architecture and understand the non explicit parts of the paper.<br><br>
+This project is inspired by the article of [Gopalakrishna Adusumilli](https://towardsdatascience.com/lidar-point-cloud-based-3d-object-detection-implementation-with-colab-part-1-of-2-e3999ea8fdd4).
 
 # Dependencies
 * Python 3.6
@@ -28,6 +28,9 @@ $ cd kitti_eval
 $ chmod +x launch_test.sh
 ```
 # Data preparation
+Here we used the Kitti Vision Dataset. 
+![Image of Kitti Dataset](https://github.com/saha0073/Lidar-3D-Object-Detection-VoxelNet/blob/main/images/kitti.PNG)
+
 1. Download the 3D KITTI detection dataset from [here](http://www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=3d). Data to download include:
     * Velodyne point clouds (29 GB): input data to VoxelNet
     * Training labels of object data set (5 MB): input label to VoxelNet
@@ -93,15 +96,6 @@ $ !python train.py \
 ```
 ./kitti_eval/evaluate_object_3d_offline [DATA_DIR]/validation/label_2 ./predictions [output file]
 ```
-
-# What's new
-
-* Tensorflow 2.0.0
-* Data pipeline with tensorflow dataset api
-* Eager mode (with use of autograph for speed)
-* Use of a variant of the smooth-l1 loss for the regression loss (use of Huber loss)
-* Use of tf.distribute for the multi gpu training (still in process, only one gpu training works for now)
-* Non use of the first type of data augmentation (may lead in a decrease of performance)
 
 # Performances
 (ongoing)
