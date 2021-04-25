@@ -16,7 +16,7 @@ This project is inspired by the article of [Gopalakrishna Adusumilli](https://to
 ```bash
 $ python3 setup build_ext --inplace
 ```
-# Data preparation (Please refer to [Colab Notebook](https://github.com/saha0073/Lidar-3D-Object-Detection-VoxelNet/blob/main/voxelnet_data_prep.ipynb))
+# Data preparation (Please refer to [Notebook](https://github.com/saha0073/Lidar-3D-Object-Detection-VoxelNet/blob/main/voxelnet_data_prep.ipynb))
 Here we used the Kitti Vision Dataset. 
 ![Image of Kitti Dataset](https://github.com/saha0073/Lidar-3D-Object-Detection-VoxelNet/blob/main/images/kitti.PNG)
 
@@ -41,7 +41,7 @@ Here we used the Kitti Vision Dataset.
        |   └── velodyne
 ```
 
-# Train (Please refer to [Colab Notebook](https://github.com/saha0073/Lidar-3D-Object-Detection-VoxelNet/blob/main/voxelnet_training.ipynb)) 
+# Train (Please refer to [Notebook](https://github.com/saha0073/Lidar-3D-Object-Detection-VoxelNet/blob/main/voxelnet_training.ipynb)) 
 
 Run  `train.py`. You can find the meaning of each hyperparameter in the script file.
 ```
@@ -88,10 +88,11 @@ $ !python train.py \
 
 # Performances
 
-I've just finished the project, and start training it. But before that, I did a lot of tests to challenge the archictecture. One of them is overfitting the model on a small training set in a few steps in order to check if i built a model able to learn anything at all, results, below.(PS : I tried to be faithful as much as I could to the paper). 
-
+In this case of 3D Object segmentation both Classification loss & Regression loss were used as the metric of performance. Here is the snapshot of the log dir visualization with Tensorboard. 
 ![voxel_training](https://github.com/saha0073/Lidar-3D-Object-Detection-VoxelNet/blob/main/images/voxel_train.PNG)
-The predicted bounding boxes are decent. The model was trained only with 100 images for 16 epoch, the prediction quality will be improved a lot when trained with more images.
+
+
+The predicted bounding boxes are decent. The model was trained only with 100 images for 16 epoch, the prediction quality will improve a lot when trained with more images.
 ![perf1](https://github.com/saha0073/Lidar-3D-Object-Detection-VoxelNet/blob/main/images/000003_front.jpg)
 ![perf2](https://github.com/saha0073/Lidar-3D-Object-Detection-VoxelNet/blob/main/images/000013_front.jpg)
 ![perf3](https://github.com/saha0073/Lidar-3D-Object-Detection-VoxelNet/blob/main/images/000100_front.jpg)
