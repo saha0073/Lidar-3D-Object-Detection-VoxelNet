@@ -92,7 +92,8 @@ In this case of 3D Object segmentation both Classification loss & Regression los
 ![voxel_training](https://github.com/saha0073/Lidar-3D-Object-Detection-VoxelNet/blob/main/images/voxel_train.PNG)
 
 
-The predicted bounding boxes are decent. The model was trained only with 100 images for 16 epoch, the prediction quality will improve a lot when trained with more images.
+The predicted bounding boxes are decent. The model was trained only with 100 images for 16 epoch, the prediction quality will improve a lot when trained with more number of images.
+
 ![perf1](https://github.com/saha0073/Lidar-3D-Object-Detection-VoxelNet/blob/main/images/000003_front.jpg)
 ![perf2](https://github.com/saha0073/Lidar-3D-Object-Detection-VoxelNet/blob/main/images/000013_front.jpg)
 ![perf3](https://github.com/saha0073/Lidar-3D-Object-Detection-VoxelNet/blob/main/images/000100_front.jpg)
