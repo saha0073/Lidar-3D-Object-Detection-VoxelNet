@@ -5,7 +5,7 @@ Implementation of [VoxelNet: End-to-End Learning for Point Cloud Based 3D Object
 This project is inspired by the article of [Gopalakrishna Adusumilli](https://towardsdatascience.com/lidar-point-cloud-based-3d-object-detection-implementation-with-colab-part-1-of-2-e3999ea8fdd4) and the work of [David Stephane](https://github.com/steph1793).
 
 # Skills Employed
-* Modeling Techniques: Lidar 3D Object Detection, VoxelNet, PointNet, Convolutional autoencoder-decoder.
+* Modeling Techniques: VoxelNet, Lidar 3D Object Detection, PointNet, Convolutional autoencoder-decoder.
 * Image Processing Techniques: Lidar data, Point cloud.
 * Tech Stack: Python (3.7) 
 * Libraries:  Tensorflow (2.3.1), opencv, numba.
